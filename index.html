@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiFabric - Генератор ключей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OptiFabric Mod</h1>
+            <p>Система генерации лицензионных ключей</p>
+        </div>
+
+        <div class="generator-box">
+            <h2>Генератор ключей</h2>
+            
+            <div class="form-group">
+                <label for="duration">Выберите срок действия:</label>
+                <select id="duration" class="input-field">
+                    <option value="3">3 минуты (тест)</option>
+                    <option value="10080">7 дней</option>
+                    <option value="43200">30 дней</option>
+                    <option value="129600">90 дней</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="btn-generate">Сгенерировать ключ</button>
+
+            <div id="result" class="result-box" style="display: none;">
+                <h3>Ваш ключ:</h3>
+                <div class="key-display" id="keyDisplay"></div>
+                <button id="copyBtn" class="btn-copy">Скопировать ключ</button>
+                <div class="key-info">
+                    <p><strong>Срок действия:</strong> <span id="expiryInfo"></span></p>
+                    <p><strong>Создан:</strong> <span id="createdInfo"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="keys-list">
+            <h2>Активные ключи</h2>
+            <button id="refreshBtn" class="btn-refresh">Обновить список</button>
+            <div id="keysList" class="keys-container">
+                <p class="loading">Загрузка...</p>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Инструкция:</h3>
+            <ol>
+                <li>Выберите срок действия ключа</li>
+                <li>Нажмите "Сгенерировать ключ"</li>
+                <li>Скопируйте ключ и сохраните его</li>
+                <li>При первом запуске мода введите ключ</li>
+                <li>Ключ привязывается к вашему ПК (HWID защита)</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
